@@ -1,14 +1,16 @@
 import { useState } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { RootState } from '../../store';
+import { RootState, Dispatch } from '../../store';
 
 import logo from './../../assets/images/logo.svg';
 
 import './Home.css';
 
 export function Home() {
+  const dispatch: Dispatch = useDispatch();
+
   const count = useSelector((state: RootState) => state.counter);
 
   return (
@@ -17,17 +19,37 @@ export function Home() {
 
       <p>Hello Vite + React!</p>
 
-      <p>
-        <button type="button" onClick={() => {}}>
-          count is: {count}
+      <p>count is: {count}</p>
+
+      <div>
+        <button type="button" onClick={() => dispatch.counter.increment(1)}>
+          +1
         </button>
-      </p>
+
+        {' | '}
+
+        <button
+          type="button"
+          onClick={() => dispatch.counter.incrementAsync(1)}
+        >
+          Async +1
+        </button>
+
+        {' | '}
+
+        <button
+          type="button"
+          onClick={() => dispatch.counter.incrementAsync(5)}
+        >
+          Async +5
+        </button>
+      </div>
 
       <p>
         Edit <code>App.tsx</code> and save to test HMR updates.
       </p>
 
-      <p>
+      <div>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -47,7 +69,7 @@ export function Home() {
         >
           Vite Docs
         </a>
-      </p>
+      </div>
     </header>
   );
 }
