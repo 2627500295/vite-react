@@ -7,7 +7,7 @@
     "cra:build": "react-scripts build",
     "cra:test": "react-scripts test --env=jsdom",
     "cra:eject": "react-scripts eject",
-    "vite:dev": "vite",
+    "vite:start": "vite",
     "vite:build": "tsc && vite build",
     "vite:preview": "vite preview"
   },

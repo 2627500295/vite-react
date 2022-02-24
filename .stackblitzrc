@@ -1,4 +1,4 @@
 {
   "installDependencies": true,
-  "startCommand": "yarn vite:dev"
+  "startCommand": "yarn vite:start"
 }
