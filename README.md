@@ -1,9 +1,9 @@
 # React
 
 - React 18.0.0-rc.0
-- Rematch
 - React Router 6.x
-- Vite
-- Tailwind CSS
+- Rematch 3.x
+- Tailwind CSS 3.x
+- Vite 2.x / React Scripts 5.x
 
 ## -
