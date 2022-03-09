@@ -1,20 +1,77 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
 @tailwind base;
 
+/**
+  * This injects Tailwind's component classes and any component classes
+  * registered by plugins.
+  */
 @tailwind components;
 
+/**
+  * This injects Tailwind's utility classes and any utility classes registered
+  * by plugins.
+  */
 @tailwind utilities;
 
-@tailwind screens;
+/**
+  * Use this directive to control where Tailwind injects the hover, focus,
+  * responsive, dark mode, and other variants of each class.
+  *
+  * If omitted, Tailwind will append these classes to the very end of
+  * your stylesheet by default.
+  */
+@tailwind variants;
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'PingFang SC',
-    'Hiragino Sans GB', 'noto sans', 'Microsoft YaHei', 'Helvetica Neue',
-    Helvetica, Arial, sans-serif;
+/**
+ * Base Styles
+ */
+@layer base {
+  html {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'PingFang SC',
+      'Hiragino Sans GB', 'noto sans', 'Microsoft YaHei', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    body {
+      @apply m-0;
+      @apply bg-slate-50;
+      @apply text-sm;
+    }
+
+    body,
+    html,
+    #root {
+      @apply w-screen h-screen;
+    }
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/**
+ * Custom Utilities
+ */
+@layer utilities {
+  .break-keep-all {
+    word-break: keep-all;
+  }
+
+  .clearfix {
+    &::after {
+      @apply block content-blank clear-both;
+    }
+  }
+}
+
+/**
+ * Component Classes
+ */
+@layer components {
 }
